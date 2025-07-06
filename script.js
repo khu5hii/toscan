@@ -1,0 +1,63 @@
+const keyexp = {
+    "data collection": "They collect information about you, like your name, email, or what you do on the app.",
+    "third parties": "They might share your data with other companies or partners.",
+    "cookies": "Small files stored on your device to remember things like login or preferences.",
+    "personal information": "Details that can identify you—like your name, phone number, or email.",
+    "location data": "They may track your GPS or where you are using the service.",
+    "tracking": "They follow what you do on the site or other sites to personalize ads or content.",
+    "advertising": "They may use your data to show you targeted ads.",
+    "opt-out": "You can say no to some data collection or emails, but not always everything.",
+    "account termination": "They can delete or block your account if you break their rules.",
+    "intellectual property": "They own the site content and dont let you copy or sell it.",
+    "user content": "Anything you post—like photos or comments—can be used by the service.",
+    "license": "You give them permission to use your content, sometimes forever and without pay.",
+    "modification": "They can change the rules at any time, often without telling you.",
+    "disclaimer": "They arent responsible if something goes wrong when you use the service.",
+    "liability": "They limit how much they can be blamed or sued for if problems happen.",
+    "arbitration": "You cant sue them; you must resolve problems privately, often without court.",
+    "governing law": "They choose which country or states rules apply to the terms.",
+    "automatic renewal": "Your subscription may renew by itself unless you cancel it.",
+    "subscription": "You might be paying regularly (monthly/yearly) for using the service.",
+    "age restriction": "You must be a certain age (like 13 or 18) to use the service.",
+};
+
+const keywords = Object.keys(keyexp);
+const obj = Object.values(keyexp);
+
+let arr = [];
+
+
+const scan = (inpval) => {
+    arr = [];
+    const text = inpval.toLowerCase();
+    for (let i = 0; i < keywords.length; i++) {
+        if (text.includes(keywords[i])) {
+            arr.push(keywords[i]);
+        }
+    }
+    display();
+};
+
+function display() {
+    let ohtml = '';
+    for (let i = 0; i < arr.length; i++) {
+        let desc = keyexp[arr[i]];
+        ohtml += `<p>${arr[i]}: ${desc}</p>`;
+    }
+
+    document.getElementById("explain").style.display = "block";
+    document.getElementById("h4").style.display = "block";
+    document.getElementById("output").innerHTML = ohtml;
+}
+
+
+
+const button = document.getElementById("button");
+
+button.addEventListener("click", function () {
+    const inp = document.getElementById("text");
+    const inpval = inp.value;
+    scan(inpval);
+});
+
+// 2.29 hr s
