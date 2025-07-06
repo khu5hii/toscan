@@ -90,22 +90,31 @@ button:hover {
     box-shadow: 0px 0px 1.5px #0000006f;
     width: 100%;
     max-width: 670px;
-    display: flex;
+    display: block;
     align-items: center;
     gap: 7px;
     padding: 10px;
 }
+
+.img-title {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
 
 .explain img {
     width: 23px;
     height: auto;
 }
 
-.explain h4 {
+#h4 {
     font-size: 0.9em;
     color: #393E46;
     margin: 0;
+    display: none;
 }
+
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
