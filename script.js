@@ -21,6 +21,38 @@ const keyexp = {
     "age restriction": "You must be a certain age (like 13 or 18) to use the service.",
 };
 
+const highRiskTerms = [
+    "arbitration",
+    "liability",
+    "account termination",
+    "license",
+];
+
+const elevatedRiskTerms = [
+    "data collection",
+    "third parties",
+    "location data",
+    "tracking",
+    "advertising",
+    "cookies",
+];
+
+const moderateRiskTerms = [
+    "modification",
+    "subscription",
+    "automatic renewal",
+    "age restriction",
+    "governing law",
+];
+
+const lowRiskTerms = [
+    "opt-out",
+    "disclaimer",
+    "personal information",
+    "user content",
+    "intellectual property",
+];
+
 const keywords = Object.keys(keyexp);
 const obj = Object.values(keyexp);
 
@@ -39,12 +71,47 @@ const scan = (inpval) => {
 };
 
 function display() {
+    let high = 0, elevated = 0, moderate = 0, low = 0;
     let ohtml = '';
     for (let i = 0; i < arr.length; i++) {
+        const term = arr[i];
+
+        if (highRiskTerms.includes(term)) {
+            high++;
+        }
+        else if (elevatedRiskTerms.includes(term)) {
+            elevated++;
+        }
+        else if (moderateRiskTerms.includes(term)) {
+            moderate++;
+        }
+        else {
+            low++;
+        }
+
         let desc = keyexp[arr[i]];
         ohtml += `<p>${arr[i]}: ${desc}</p>`;
     }
 
+    const score = (high * 30) + (elevated * 20) + (moderate * 10) + (low * 5);
+    const normalized = Math.min(100, Math.floor((score / 240) * 100)); 
+    document.getElementById("scorecard").innerText = normalized;
+    
+
+
+    let vibe = '';
+    if (normalized <= 39) {
+        vibe = 'Dangerous';
+    } else if (normalized <= 59) {
+        vibe = 'Suspicious';
+    } else if (normalized <= 79) {
+        vibe = 'Meh';
+    } else {
+        vibe = 'Friendly';
+    }
+
+    ohtml = ohtml +`<h2>Vibe Score</h2>`;
+    document.getElementsByClassName("score")[0].style.display = "block";
     document.getElementById("explain").style.display = "block";
     document.getElementById("h4").style.display = "block";
     document.getElementById("output").innerHTML = ohtml;
@@ -84,3 +151,4 @@ popbutton.addEventListener("click", function () {
 
 // 2.29 hr s
 // 33 min
+

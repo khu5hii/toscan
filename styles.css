@@ -192,6 +192,54 @@ button:hover {
     display: none;
 }
 
+/* Vibe Score 10:05 ~ 11:24*/
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #515151;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em auto;
+    box-shadow: 0 0 8px #0000002a;
+}
+
+.inner-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #393E46;
+    margin: 0;
+    padding: 0;
+}
+
+#scorecard {
+    text-align: center;
+    color: #393E46;
+}
+
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
@@ -363,5 +411,22 @@ button:hover {
 
     #header-img {
         width: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .popup {
+        padding: 30px;
+        width: 90%;
+    }
+
+    .popup p {
+        font-size: 1em;
+    }
+
+    #pop {
+        width: 120px;
+        height: 38px;
+        font-size: 0.95em;
     }
 }
