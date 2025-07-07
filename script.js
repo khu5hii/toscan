@@ -57,7 +57,14 @@ const button = document.getElementById("button");
 button.addEventListener("click", function () {
     const inp = document.getElementById("text");
     const inpval = inp.value;
-    scan(inpval);
+
+    if (inpval === '') {
+        document.getElementsByClassName("popup")[0].style.display = "flex";
+    }
+    else {
+        scan(inpval);
+
+    }
 });
 
 const button2 = document.getElementById("button2");
@@ -68,6 +75,11 @@ button2.addEventListener("click", function () {
     button2.style.display = 'none';
 });
 
+const popbutton = document.getElementById("pop");
+
+popbutton.addEventListener("click", function () {
+    document.getElementsByClassName("popup")[0].style.display = "none";
+});
 
 
 // 2.29 hr s
