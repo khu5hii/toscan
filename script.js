@@ -48,8 +48,8 @@ function display() {
     document.getElementById("explain").style.display = "block";
     document.getElementById("h4").style.display = "block";
     document.getElementById("output").innerHTML = ohtml;
+    document.getElementById("button2").style.display = "inline";
 }
-
 
 
 const button = document.getElementById("button");
@@ -60,4 +60,15 @@ button.addEventListener("click", function () {
     scan(inpval);
 });
 
+const button2 = document.getElementById("button2");
+
+button2.addEventListener("click", function () {
+    document.getElementById("text").value = '';
+    document.getElementById("explain").style.display = "none";
+    button2.style.display = 'none';
+});
+
+
+
 // 2.29 hr s
+// 33 min
