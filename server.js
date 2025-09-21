@@ -50,5 +50,5 @@ ${text}
 
 const PORT = 5000;
 app.listen(PORT, () =>
-  console.log("✅ TOS AI Analyzer running on http://localhost:5000")
+  console.log("TOS AI Analyzer running on http://localhost:5000")
 );
