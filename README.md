@@ -1,35 +1,54 @@
 # 📜 Terms of Service (TOS) Explainer
 
-A simple web app that explains complicated Terms of Service (TOS) language using plain English. Paste any chunk of legal text, and the app will highlight and explain common legal terms related to privacy, data, and user rights.
+**TOS Explainer** is a simple web application that helps users understand complicated Terms of Service and legal language using plain, easy-to-read English. Users can paste any section of legal text, and the app highlights and explains common legal terms related to privacy, data usage, and user rights.
+
+---
+
+## 🌐 Live Website
+
+👉 **Live Demo:**  https://toscan.onrender.com/
 
 ---
 
 ## ✨ Features
 
-- 🔍 Scans input text for common legal keywords (like "cookies", "third parties", etc.)
-- 💬 Provides simplified explanations for each keyword found
-- 🖼️ Shows an icon and "Explanation" title when results are displayed
-- ⚡ Instant feedback when you click "Analyze Text"
+### 🔍 Legal Keyword Detection
+- Scans the input text for commonly used legal terms  
+- Detects keywords like *cookies*, *third parties*, *data collection*, and more  
+
+### 💬 Plain-English Explanations
+- Provides simplified explanations for every detected legal term  
+- Helps users quickly understand what they are agreeing to  
+
+### 🖼️ Clear Results Display
+- Displays an icon with an **“Explanation”** heading when results appear  
+- Clean and easy-to-read explanation blocks  
+
+### ⚡ Instant Analysis
+- Click **“Analyze Text”** to get immediate feedback  
+- No page reloads or delays  
+
+### 🤖 AI-Powered Summarization
+- Uses the **OpenAI API** to summarize and simplify complex legal language  
+- Enhances explanations beyond keyword matching for better clarity  
 
 ---
 
 ## 🧠 How It Works
 
-- The app looks for a predefined list of legal terms in the input text.
-- When it finds a match, it adds the keyword and its explanation to a results section.
-- It then makes the explanation block visible with an icon and heading.
+- The app scans the pasted text for a predefined list of legal terms  
+- When a keyword is detected, its simplified explanation is added to the results section  
+- The OpenAI API is used to further summarize or clarify complex legal passages  
+- The explanation panel becomes visible with an icon and title for better UX  
 
 ---
 
-## 🔧 Technologies Used
+## 🛠️ Technologies Used
 
+### Frontend
 - HTML5  
 - CSS3  
-- JavaScript (Vanilla)
+- Vanilla JavaScript  
 
----
-
-## 🙌 Credits
-
-Made by Khushi.  
-Inspired by the need to make confusing legal language more accessible.
+### AI & APIs
+- OpenAI API (for legal text summarization and simplification)  
